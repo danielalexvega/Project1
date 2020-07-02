@@ -1,17 +1,21 @@
-// read the user input 
-
-// make api calls to get information
-
-// render the elements on the page 
 
 var drinkValue;
-var containsAlcolhol;
+var containsAlcohol;
 var title;
-var containsAlcolhol;
 var author;
 var description;
+var imgURL;
 var hasReview = false;
- 
+
+var bookTitle = $('#bookTitle');
+var autherNameEl = $('#autherName');
+var bookImg = $('#bookImg');
+var bookDescriptionEl = $('#bookDescription');
+var bookReviewEl = $('#bookReview');
+
+var bookContainer = $('#bookContainer');
+var drinkContainer = $('#drinkContainer');
+
 
 
 var searchBtn = $('#search-btn');
@@ -20,10 +24,12 @@ var searchBtn = $('#search-btn');
 searchBtn.on('click', function (event) {
     event.preventDefault();
     title = $('#search-term').val().trim();
-    containsAlcolhol = $('#contains-alcohol').val();
+    containsAlcohol = $('#contains-alcohol').val();
+    // ***** Empty out the divs *****
+    bookContainer.empty();
+    drinkContainer.empty();
 
-    // need to clear the divs that contain the information
-
+    // ***** Get Book Information from Google Books, calculate drink value, render elements *****
     var queryURL = `https://www.googleapis.com/books/v1/volumes?q=${title}`;
 
     $.ajax({
@@ -34,9 +40,13 @@ searchBtn.on('click', function (event) {
         title = response.items[0].volumeInfo.title;
         category = response.items[0].volumeInfo.categories[0];
         description = response.items[0].volumeInfo.description;
-        getBookID(author, title);
+        imgUrl = response.items[0].volumeInfo.imageLinks.thumbnail;  //the width is 128 pixels
+
+        calDrinkVal(author, title);  //calculate drinkValue
+        renderElements();
     });
 
+    // ***** Get New York Times Review, render element *****
     var nytkey = 'MJTrpJJbUsVAAkzyjcaL8Vpkm73QTDlp';
     var nytURL = `https://api.nytimes.com/svc/books/v3/reviews.json?title=${title}&api-key=${nytkey}`;
 
@@ -45,19 +55,32 @@ searchBtn.on('click', function (event) {
         method: "GET"
     }).then(function (response) {
         if (response.results.length !== 0) {
-            hasReview = true;
-            console.log(response.results[0].url)
+            var reviewURL = response.results[0].url;
+            bookReviewEl.attr("href", reviewURL);
         }
     });
+
+
 });
 
-function getBookID(author, title) {
+function calDrinkVal(author, title) {
     drinkValue = 0;
     let totalString = (author + title).trim();
     totalString = totalString.replace(/\s+/g, '').toUpperCase();
-    
+
     for (let i = 0; i < totalString.length; i++) {
         drinkValue += totalString.charCodeAt(i);
     }
+    drinkValue -= 500;
+    drinkValue = containsAlcohol ? Math.floor(drinkValue / 7.57) : Math.floor(drinkValue / 68.97);
 }
+
+function renderElements() {
+    bookTitle.text(title);
+    autherNameEl.text(author);
+    bookDescriptionEl.text(description);
+    bookImg.attr('src', imgUrl);
+}
+
+
 
