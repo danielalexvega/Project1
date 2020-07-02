@@ -1,6 +1,6 @@
 
 var drinkValue;
-var containsAlcohol;
+var containsAlcohol = true;
 var title;
 var author;
 var description;
@@ -23,8 +23,11 @@ var searchBtn = $('#search-btn');
 //when the search button is clicked, I need to read the input.
 searchBtn.on('click', function (event) {
     event.preventDefault();
+
+
     title = $('#search-term').val().trim();
-    containsAlcohol = $('#contains-alcohol').val();
+    console.log(title);
+    //containsAlcohol = $('#contains-alcohol').val();
     // ***** Empty out the divs *****
     bookContainer.empty();
     drinkContainer.empty();
@@ -43,6 +46,7 @@ searchBtn.on('click', function (event) {
         imgUrl = response.items[0].volumeInfo.imageLinks.thumbnail;  //the width is 128 pixels
 
         calDrinkVal(author, title);  //calculate drinkValue
+        drinkCalls();
         renderElements();
     });
 
@@ -80,6 +84,8 @@ function renderElements() {
     autherNameEl.text(author);
     bookDescriptionEl.text(description);
     bookImg.attr('src', imgUrl);
+
+    console.log(drinkValue);
 }
 
 
