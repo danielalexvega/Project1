@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>Cocktales - Pairing literature and libations </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+    <header>
+        <div class="jumbotron jumbotron-fluid" id="banner">
+            <div class="container">
+                <h1 class="display-4">Cocktales</h1>
+                <p class="lead">Pairing literature and libations.</p>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Cocktales</a>
+
+        <form class="form-inline my-2 ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="The Great Gatesby" aria-label="Search">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="alcoholicCheckbox">
+                <label class="form-check-label" for="alcoholicCheck" id="alcoholicCheck">Alcoholic? </label>
+            </div>
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- book <div> -->
+            <div class="col-md-6" id="bookContainer">
+                <div class="row">
+                    <div class="col-md-4 customCol" id="imgCorner">
+                        <!-- book img corner-->
+                        <img src='imgs/pelican_books_logo_detail2.jpg' width='150px' id="bookImg"></img>
+
+                    </div>
+                    <div class="col-md-6 customCol">
+                        <h2 id="bookTitle">Book Title</h2>
+                        <p id="autherName">Author</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 customCol">
+                        <a href="" id="bookReview"">
+                            New York Time's Book Review
+                        </a>
+                        
+                    </div>
+                    <div class="col-md-6 customCol">
+                        <p id="bookDescription">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, dolorum fuga quidem
+                            velit error, ut eveniet deleniti earum doloribus at nesciunt. Qui, necessitatibus. Eos
+                            placeat in quaerat ex ipsum similique!
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- drink <div> -->
+            <div class=" col-md-6" id="drinkContainer">
+                            <div class="row">
+                                <div class="col-md-4 customCol" id="imgCorner">
+                                    <!-- book img corner-->
+                                    <img src='imgs/pelican_books_logo_detail2.jpg' width='150px' id="bookImg"></img>
+
+
+                                </div>
+                                <div class="col-md-6 customCol">
+                                    <h2 id="bookTitle">Drink Name</h2>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 customCol">
+                                    
+                                </div>
+                                <div class="col-md-6 customCol">
+                                    <p id="bookDescription">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, dolorum fuga
+                                        quidem velit error, ut eveniet deleniti earum doloribus at nesciunt. Qui,
+                                        necessitatibus. Eos placeat in quaerat ex ipsum similique!
+                                    </p>
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="book.js"></script>
+
 </body>
+
 </html>
