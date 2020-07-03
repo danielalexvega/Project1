@@ -2,70 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Project</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=DM+Serif+Display&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
-  <div class="jumbotron text-center">
-    <h1>CockTale</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div id="searchBar" class="col-md-4">
-          <form class="form-inline my-2 my-lg-0">
-            <div class="input-group">
-              <input class="form-control mr-sm-2" size="40" type="text" placeholder="Search">
-              <div class="input-group-btn">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-              </div>
-            </div>
-          </form>
+    <header>
+        <div class="jumbotron jumbotron-fluid" id="banner">
+            <h4 id="bannerText">Top Shelf</h4>
+            <h2 id="bannerTag">Pairing great literature and libations!</h2>
         </div>
-        <div class="col-md-4"></div>
-      </div>
-    </div>
-  </div>
+    </header>
+    <nav class="navbar navbar-expand-lg" id="topNavBar">
 
-  <div class="row">
-    <div class="col-md-4" id="bookSearch">
-      <h2>Book</h2>
-      <img
-        src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        alt="picture of books" height="350px" width="300px">
-    </div>
-    <div class="col-md-4" id="recipe">
-      <h2>Recipe</h2>
-      <img
-        src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        alt="wood" height="350px" width="300px">
-    </div>
-    <div class="col-md-4" id="drinkImage">
-      <h2>Drink</h2>
-      <img
-        src="https://images.unsplash.com/photo-1560074152-1f41e1015a1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        alt="bar" height="350" width="300px">
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <footer id="footer1">
-        <h5>MIX UP A DRINK AND FIND A COMFY SPOT FOR A LITERARY SIPPING ESCAPE<h5>
-      </footer>
-    </div>
-  </div>
+        <form class="form-inline my-2 ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="The Great Gatesby" aria-label="Search"
+                id="search-term">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="alcoholicCheckbox">
+                <label class="form-check-label" for="alcoholicCheck" id="alcoholicCheck">Alcoholic?</label>
+            </div>
+            <button class="btn btn-dark my-2 my-sm-0" id="search-btn" type="submit">Search</button>
+        </form>
+    </nav>
 
-  <script></script>
-  <script></script>
-  <script></script>
+    <div class="container tb-2 customContainer">
+        <div class="row">
+            <!-- BOOK CONTAINER  -->
+            <div class="col-md-2">
+                <!-- BOOK IMG-->
+                <img src="" alt="Book cover" id="bookImg">
+                <!-- REVIEW-->
+                <a href="" id="bookReview">Read the New York Times Book Review</a>
+            </div>
+            <div class="col-md-4">
+                <!-- TITLE, AUTHOR-->
+                <h2 id="bookTitle"> BOOKTITLE </h2>
+                <h3 id="autherName">AUTHOR</h3>
+                <!-- DESCRIPTION-->
+                <p id="bookDescription"> </p>
+            </div>
+
+            <!-- DRINK CONTAINER  -->
+            <div class="col-md-2">
+                <!-- DRINK IMAGE-->
+                <img src="" alt="Cocktail Photo" id="drinkImgEl">
+            </div>
+            <div class="col-md-4">
+                <!-- DRINK NAME-->
+                <h2 id="drinkTitleEl">DRINK TITLE</h2>
+                <!-- DRINK INGREDIENTS-->
+                <h4> Ingredients:</h4>
+                <p id="recipeListEl"></p>
+                <h4>Instructions</h4>
+                <p id="instructionsEl"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <footer id="footer1">
+                <h5>MIX UP A DRINK AND FIND A COMFY SPOT FOR A LITERARY SIPPING ESCAPE<h5>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="book.js"> </script>
+    <script type="text/javascript" src="drink.js"></script>
 
 
 </body>
-
-</html>
+      </html>

@@ -1,3 +1,61 @@
+
+/* font-family: 'Arbutus Slab', serif;
+font-family: 'DM Serif Display', serif;
+font-family: 'Playfair Display', serif; */
+
+
+body{
+  background-color: #e0b15e;
+}
+#banner {
+    padding: 24px 0px;
+    margin-bottom: 0px;
+    background-color: #2b1511;
+    background-image: url('imgs/Top\ Shelf\ 5\ \(1\).png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    color:white;
+}
+
+#bannerText {
+  /* font-family: 'DM Serif Display', serif; */
+  font-family: 'Arbutus Slab', serif;
+  /* font-family: 'Playfair Display', serif; */
+  font-size: 6.5vw;
+  text-align: center;
+}
+
+#bannerTag {
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+#topNavBar {
+  height:54px;
+  background-color: #2b1511;
+  color:#e0b15e;
+}
+
+
+/* #bannerImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.customContainer {
+  margin-top: 10px;
+}
+
+.customCol {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#alcoholicCheck {
+    padding-right: 10px;
+
 .jumbotron {
   background-color: black;
   color: white;
