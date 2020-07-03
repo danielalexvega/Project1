@@ -31,15 +31,15 @@ var img = $("#drinkImgEl");//.append("#imgDiv"); // defined as strDrinkThumb in 
 
 var decider;
 
-if (containsAlcohol) {
-    decider = alcoholic;
-} else {
-    decider = nonAlcoholic
-}
 
 var searchBtn = $('#search-btn');
 
 function drinkCalls() {
+    if (containsAlcohol) {
+        decider = alcoholic;
+    } else {
+        decider = nonAlcoholic;
+    }
     $.ajax({
         url: decider,
         method: "GET"
@@ -50,16 +50,13 @@ function drinkCalls() {
             url: "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=" + drinkIdNumber,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
             drinkName = response.drinks[0].strDrink;
             drinkInstructions = response.drinks[0].strInstructions;
 
             image = response.drinks[0].strDrinkThumb;
-
-            drinkTitle.text(drinkName); // append to a <h2>?
-
-            instructions.text(drinkInstructions); // append to a <p>?
-            img.attr("src", image); //append to image <div>?
+            drinkTitle.text(drinkName); 
+            instructions.text(drinkInstructions);
+            img.attr("src", image);
 
             ingredients = [response.drinks[0].strIngredient1, response.drinks[0].strIngredient2, response.drinks[0].strIngredient3, response.drinks[0].strIngredient4, response.drinks[0].strIngredient5, response.drinks[0].strIngredient6, response.drinks[0].strIngredient7, response.drinks[0].strIngredient8, response.drinks[0].strIngredient9, response.drinks[0].strIngredient10, response.drinks[0].strIngredient11, response.drinks[0].strIngredient12, response.drinks[0].strIngredient13, response.drinks[0].strIngredient14, response.drinks[0].strIngredient15];
 
