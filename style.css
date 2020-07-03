@@ -1,3 +1,4 @@
+
 /* font-family: 'Arbutus Slab', serif;
 font-family: 'DM Serif Display', serif;
 font-family: 'Playfair Display', serif; */
@@ -54,6 +55,10 @@ body{
 
 #alcoholicCheck {
     padding-right: 10px;
+
+.jumbotron {
+  background-color: black;
+  color: white;
 }
 
 .container {
@@ -84,14 +89,4 @@ body{
 }
 #drinkImage {
   text-align: center;
-}
-
-#drinkImgEl {
-  width:128px;
-}
-
-
-@media and screen (screen-size:375px) {
-
-
 }
