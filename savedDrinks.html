@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Top Shelf</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style2.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=DM+Serif+Display&family=Francois+One&family=Montserrat+Subrayada:wght@700&family=Notable&family=Playfair+Display:wght@500;600&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="jumbotron jumbotron-fluid" id="banner">
+            <h1 id="bannerText">Bar Cart</h1>
+            <h2 id="barCartTag">"Always do sober what you said you'd do drunk. That will teach you to keep your mouth
+                shut." - Ernest Hemingway</h2>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg" id="topNavBar">
+        <button class="btn btn-dark m1-2 my-sm-0 buttonRow" id="topShelf-btn" type="submit">Top Shelf</button>
+        <button class="btn btn-dark m1-2 my-sm-0 buttonRow" id="bookShelf-btn" type="submit">Book shelf</button>
+    </nav>
+
+    <div class="container customContainer" id="savedDrinkContainer">
+
+        <!--Modal-->
+        <div class="modal fade" id="myDrinkModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Bar Cart is Empty</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your bar cart is empty. Save some drinks from the Top Shelf.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <footer id="sticky-footer" class="py-2 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Your Website</small>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            renderBarCart();
+        });
+    </script>
+
+    <script type="text/javascript" src="book.js"> </script>
+    <script type="text/javascript" src="drink.js"></script>
+    <script type="text/javascript" src="bookList.js"></script>
+    <script type="text/javascript" src="drinkList.js"></script>
+
+
+
+</body>
+
+</html>

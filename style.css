@@ -6,6 +6,7 @@ font-family: 'Playfair Display', serif; */
 
 body{
   background-color: #e0b15e;
+  
 }
 #banner {
     padding: 24px 0px;
@@ -19,15 +20,15 @@ body{
 }
 
 #bannerText {
-  /* font-family: 'DM Serif Display', serif; */
   font-family: 'Arbutus Slab', serif;
-  /* font-family: 'Playfair Display', serif; */
-  font-size: 6.5vw;
+  font-size: 75px;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 #bannerTag {
-  font-size: 1.5vw;
+  font-family: 'Arbutus Slab', serif;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -45,7 +46,7 @@ body{
 } */
 
 .customContainer {
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .customCol {
@@ -87,6 +88,15 @@ body{
 #recipe {
   text-align: center;
 }
-#drinkImage {
+#drinkImg {
   text-align: center;
+  width:128px;
+}
+
+.customBtn {
+  margin-bottom: 20px;
+}
+
+.buttonRow {
+  margin-right: 5px;
 }
