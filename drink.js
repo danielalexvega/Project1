@@ -23,10 +23,11 @@ var drinkImgDiv = $("#drinkImgDiv");
 var ingredientHeader = $('#ingredientsHeader');
 var instructionHeader = $('#insructionsHeader')
 var drinkCol = $('#drinkCol');
-
+var searchBtn = $('#search-btn');
 
 
 var decider;
+
 
 function loadDrinkStorage(){
     savedDrinkArr = JSON.parse(localStorage.getItem('drinkArr'));
@@ -35,7 +36,6 @@ function loadDrinkStorage(){
     }
     console.log(savedDrinkArr);
 }
-
 
 function drinkCalls() {
     saveDrinkBtn.toggle();
@@ -68,14 +68,11 @@ function drinkCalls() {
             instructions.text(drinkInstructions);
             ingredientHeader.text('Ingredients:');
             instructionHeader.text('Instructions:');
-
-
-
             ingredients = [response.drinks[0].strIngredient1, response.drinks[0].strIngredient2, response.drinks[0].strIngredient3, response.drinks[0].strIngredient4, response.drinks[0].strIngredient5, response.drinks[0].strIngredient6, response.drinks[0].strIngredient7, response.drinks[0].strIngredient8, response.drinks[0].strIngredient9, response.drinks[0].strIngredient10, response.drinks[0].strIngredient11, response.drinks[0].strIngredient12, response.drinks[0].strIngredient13, response.drinks[0].strIngredient14, response.drinks[0].strIngredient15];
-
             measurements = [response.drinks[0].strMeasure1, response.drinks[0].strMeasure2, response.drinks[0].strMeasure3, response.drinks[0].strMeasure4, response.drinks[0].strMeasure5, response.drinks[0].strMeasure6, response.drinks[0].strMeasure7, response.drinks[0].strMeasure8, response.drinks[0].strMeasure9, response.drinks[0].strMeasure10, response.drinks[0].strMeasure11, response.drinks[0].strMeasure12, response.drinks[0].strMeasure13, response.drinks[0].strMeasure14, response.drinks[0].strMeasure15];
 
             recipe.empty();
+
             let ingredientList = $("<ul>");
             for (let i = 0; i < ingredients.length; i++) {
                 if (ingredients[i] !== null) {
@@ -93,4 +90,5 @@ function drinkCalls() {
     });
 
 }
+
 

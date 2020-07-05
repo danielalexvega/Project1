@@ -1,3 +1,4 @@
+
 /* font-family: 'Arbutus Slab', serif;
 font-family: 'DM Serif Display', serif;
 font-family: 'Playfair Display', serif; */
@@ -55,6 +56,10 @@ body{
 
 #alcoholicCheck {
     padding-right: 10px;
+
+.jumbotron {
+  background-color: black;
+  color: white;
 }
 
 .container {
@@ -95,13 +100,3 @@ body{
 .buttonRow {
   margin-right: 5px;
 }
-
-/* #saveBookBtn {
- 
-} */
-
-
-/* @media and screen (screen-size:375px) {
-
-
-} */
