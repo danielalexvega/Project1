@@ -5,111 +5,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project</title>
+    <title>Top Shelf</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=DM+Serif+Display&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style2.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=DM+Serif+Display&family=Francois+One&family=Montserrat+Subrayada:wght@700&family=Notable&family=Playfair+Display:wght@500;600&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/036f86cdc7.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <header>
-        <div class="jumbotron jumbotron-fluid" id="banner">
-            <h4 id="bannerText">Top Shelf</h4>
-            <h2 id="bannerTag">Pairing great literature and libations!</h2>
+        <div class="jumbotron jumbotron-fluid customJumbotron" id="banner">
+            <h2 id="bannerText">Top Shelf</h2>
+            <h4 id="bannerTag">Pairing great literature and libations!</h4>
         </div>
     </header>
     <nav class="navbar navbar-expand-lg" id="topNavBar">
+        <button class="btn btn-dark m1-2 my-sm-0 buttonRow" id="random-btn" type="submit">Random</button>
+        <button class="btn btn-dark m1-2 my-sm-0 buttonRow" id="bookShelf-btn" type="submit">Book Shelf</button>
+        <button class="btn btn-dark m1-2 my-sm-0 buttonRow" id="barCart-btn" type="submit">Bar Cart</button>
 
         <form class="form-inline my-2 ml-auto">
-            <input class="form-control mr-sm-2" type="search" placeholder="The Great Gatesby" aria-label="Search"
+            <input class="form-control mr-sm-2" type="search" placeholder="The Great Gatsby" aria-label="Search"
                 id="search-term">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="alcoholicCheckbox">
-                <label class="form-check-label" for="alcoholicCheck" id="alcoholicCheck">Alcoholic?</label>
+                <input type="checkbox" class="form-check-input" id="alcoholicCheckbox" checked>
+                <label class="form-check-label" for="alcoholicCheckbox" id="alcoholicCheck">Alcoholic?</label>
             </div>
             <button class="btn btn-dark my-2 my-sm-0" id="search-btn" type="submit">Search</button>
         </form>
     </nav>
 
-    <div class="container tb-2 customContainer">
+    <div class="container customContainer">
         <div class="row">
             <!-- BOOK CONTAINER  -->
             <div class="col-md-2">
                 <!-- BOOK IMG-->
-                <img src="" alt="Book cover" id="bookImg">
+                <div id="bookImageDiv"></div>
                 <!-- REVIEW-->
-                <a href="" id="bookReview">Read the New York Times Book Review</a>
+                <a href="" id="bookReview" target="_blank"></a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="bookCol">
                 <!-- TITLE, AUTHOR-->
-                <h2 id="bookTitle"> BOOKTITLE </h2>
-                <h3 id="autherName">AUTHOR</h3>
+                <h2 id="bookTitle"></h2>
+                <h3 id="autherName"></h3>
                 <!-- DESCRIPTION-->
                 <p id="bookDescription"> </p>
+                <button class="btn btn-dark customBtn" id="saveBookBtn"> <i id="saveBookIcon" class="fas fa-plus"></i>
+                    Save Book</button>
             </div>
 
             <!-- DRINK CONTAINER  -->
             <div class="col-md-2">
                 <!-- DRINK IMAGE-->
-                <img src="" alt="Cocktail Photo" id="drinkImgEl">
+                <div id="drinkImgDiv"></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="drinkCol">
                 <!-- DRINK NAME-->
-                <h2 id="drinkTitleEl">DRINK TITLE</h2>
+                <h2 id="drinkTitleEl"></h2>
                 <!-- DRINK INGREDIENTS-->
-                <h4> Ingredients:</h4>
-                <p id="recipeListEl"></p>
-                <h4>Instructions</h4>
-                <p id="instructionsEl"></p>
+                <h4 id="ingredientsHeader"></h4>
+                <p id="recipeList"></p>
+                <h4 id="insructionsHeader"></h4>
+                <p id="instructions"></p>
+                <button class="btn btn-dark customBtn" id="saveDrinkBtn"> <i id="saveDrinkIcon" class="fas fa-plus"></i>
+                    Save Drink</button>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <footer id="footer1">
-                <h5>MIX UP A DRINK AND FIND A COMFY SPOT FOR A LITERARY SIPPING ESCAPE<h5>
-            </footer>
+
+    <!--Modal-->
+    <!-- <div class="modal fade" id="indexModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Pardon Us. </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Our apologies, but we had trouble finding that book. How about reading a classic?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </div> -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="book.js"> </script>
+    <footer id="sticky-footer" class="py-2 bg-dark text-white-50 fixed-bottom">
+        <div class="container text-center">
+            <small>Mix up a drink and find a comfy spot for a literary sipping escape</small>
+        </div>
+    </footer>
+
+    <script>
+        $(function () {
+            loadBookStorage();
+            loadDrinkStorage();
+            saveBookBtn.toggle();
+        });
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="book.js"> </script>
     <script type="text/javascript" src="drink.js"></script>
+    <script type="text/javascript" src="bookList.js"></script>
+    <script type="text/javascript" src="drinkList.js"></script>
 
 
 
 </body>
 
 </html>
-<!-- <div class="row">
-                                            <div class="col-md-4" id="bookSearch">
-                                                <h2>Book</h2>
-                                                <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                                    alt="picture of books" height="350px" width="300px">
-                                            </div>
-                                            <div class="col-md-4" id="recipe">
-                                                <h2>Recipe</h2>
-                                                <img src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                                    alt="wood" height="350px" width="300px">
-                                            </div>
-                                            <div class="col-md-4" id="drinkImage">
-                                                <h2>Drink</h2>
-                                                <img src="https://images.unsplash.com/photo-1560074152-1f41e1015a1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                                                    alt="bar" height="350" width="300px">
-                                            </div>
-                                        </div> -->
