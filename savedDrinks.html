@@ -85,6 +85,25 @@
     <script>
         $(function () {
             renderBarCart();
+
+            var removeListener = $('.removeDrink');
+            removeListener.click(function(event) {
+                event.preventDefault();
+                let removeDrink = $(this).parent().parent().children()[1].id;
+                console.log(removeDrink);
+                
+                let removeIndex = -1;
+                for(let i = 0; i < drinkArr.length; i++) {
+                    if(drinkArr[i].drName === removeDrink) {
+                        removeIndex = i;
+                    }
+                }
+                console.log(removeIndex);
+                drinkArr.splice(removeIndex, 1);
+                
+                $('#savedDrinkContainer').empty();
+                renderBarCart();
+            });
         });
     </script>
 

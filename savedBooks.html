@@ -61,7 +61,8 @@
             renderBookShelf();
 
             var removeListener = $('.removeBook');
-            removeListener.click(function() {
+            removeListener.click(function(event) {
+                event.preventDefault();
                 console.log(bookArr);
                 let removeTitle = $(this).parent().parent().children()[1].id;
              
@@ -77,8 +78,7 @@
                 console.log(bookArr);
                 $('#savedBookContainer').empty();
                 renderBookShelf();
-            }) 
-
+            }); 
         });
     </script>
 
