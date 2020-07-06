@@ -25,7 +25,15 @@ THEN the information will be stored in their Book Cart.
 WHEN a user saves the drink they searched,
 THEN the information will be stored in their Bar Cart.
 
-GitHub: https://github.com/danielalexvega/Project1
+GitHub Repo: https://github.com/danielalexvega/Project1
 
-GitHub Pages: 
+Deployed Site: https://danielalexvega.github.io/Project1/index.html
+
+![] (barCart.jpg)
+
+![] (bookShelf.jpg)
+
+![] (topShelf.jpg)
+ 
+
 
