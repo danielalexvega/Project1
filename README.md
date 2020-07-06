@@ -29,11 +29,11 @@ GitHub Repo: https://github.com/danielalexvega/Project1
 
 Deployed Site: https://danielalexvega.github.io/Project1/index.html
 
-![](/barCart.jpg)
+![](barCart.JPG)
 
-![](/bookShelf.jpg)
+![](bookShelf.JPG)
 
-![](/topShelf.jpg)
+![](topShelf.JPG)
  
 
 
