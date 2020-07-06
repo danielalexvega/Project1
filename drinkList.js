@@ -26,6 +26,7 @@ function createDrinkObject(event) {
             });
         }
     } else {
+        savedDrinkArr = [];
         savedDrinkArr.push({
             drName: drinkName,
             drInstructions: drinkInstructions,
