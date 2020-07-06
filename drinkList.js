@@ -6,8 +6,10 @@ var savedDrinkContainer = $('#savedDrinkContainer');
 saveDrinkBtn.on('click', createDrinkObject);
 barCartBtn.on('click', gotoBarcart);
 
-function createDrinkObject() {
-    if (savedDrinkArr.length !== 0) {
+function createDrinkObject(event) {
+    event.preventDefault();
+
+    if (savedDrinkArr !== undefined && savedDrinkArr.length !== 0) {
         let containsDrink = false;
         savedDrinkArr.forEach(drink => {
             if (drink.drName === drinkName) {
@@ -44,14 +46,13 @@ function gotoBarcart(event){
 
 function renderBarCart() {
     drinkArr = JSON.parse(localStorage.getItem('drinkArr'));
-    console.log(drinkArr);
 
     //picture     name     ingredients       instructions
-    
+    //I need to clear out the container
     if(drinkArr === null || drinkArr.length === 0) {
         //try a modal alerting that there's nothing on the barcart, go to the top shelf
-        console.log('test');
-        $('#myDrinkModal').modal('show');
+        // console.log('test');
+        // $('#myDrinkModal').modal('show');
 
     } else {
         //loop through array and render elements
@@ -62,7 +63,7 @@ function renderBarCart() {
             let imgCol = $('<div>').attr('class', 'col-md-2');
             let barCartImg = $('<img>');
             let nameCol = $('<div>').attr('class', 'col-md-2');
-            let nameHeader = $('<h5>').attr('classl', 'barCartName');
+            let nameHeader = $('<h5>').attr('class', 'barCartName');
             let ingredientsCol = $('<div>').attr('class', 'col-md-3');
             let instructionsCol = $('<div>').attr('class', 'col-md-3');
             let removeCol = $('<div>').attr('class', 'col-md-2');
@@ -90,18 +91,12 @@ function renderBarCart() {
             instructionsCol.text(drink.drInstructions);
             row.append(instructionsCol);
 
-            let removeBtn = $('<button>').attr('class', 'btn btn-dark m1-2 my-sm-0 barCartBtn');
+            let removeBtn = $('<button>').attr('class', 'btn btn-dark m1-2 my-sm-0 removeDrink');
             removeBtn.text('Remove');
             removeCol.append(removeBtn);
             row.append(removeCol);
 
             $('#savedDrinkContainer').append(row);
-       });
-        
-   }
-
-
-
-
-       
+       });    
+   }       
 }

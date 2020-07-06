@@ -1,6 +1,5 @@
 //deal with local storage, storing drinks, storing books, random books, 
 
-
 var drinkValue;
 var containsAlcohol = true;
 var title;
@@ -31,6 +30,8 @@ var topShelfBtn = $('#topShelf-btn');
 
 var litArray = ['Lord of the Flies', '1984', "The Handmaid's Tale", 'The Great Gatsby', 'Things Fall Apart', 'To Kill a Mockingbird', 'Farewell to Arms', 'Invisible Man', 'On the Road', "One Flew Over the Cuckoo's Nest", 'Catch-22', 'The Catcher in the Rye', 'Fahrenheit 451', 'East of Eden', 'Breakfast of Champions'];
 
+saveBookBtn.toggle();
+loadBookStorage();
 
 function loadBookStorage() {
     title = localStorage.getItem('title');
@@ -40,31 +41,19 @@ function loadBookStorage() {
         makeCalls(title);
     }
 
-    saveBookArr = JSON.parse(localStorage.getItem('bookArr'));
-    if(saveBookArr === null) {
-        saveBookArr = [];
+    savedBookArr = JSON.parse(localStorage.getItem('bookArr'));
+    if(savedBookArr === null) {
+        savedBookArr = [];
     }
-    console.log(saveBookArr);
 }
 
 searchBtn.on('click', function (event) {
     event.preventDefault();
-<<<<<<< HEAD
-
-
-    title = $('#search-term').val().trim();
-    console.log(title);
-    //containsAlcohol = $('#contains-alcohol').val();
-    // ***** Empty out the divs *****
-    bookContainer.empty();
-    drinkContainer.empty();
-=======
     saveBookBtn.toggle();
     bookImgDiv.empty();
 
     containsAlcohol = $('#alcoholicCheckbox').prop('checked');
     title = $('#search-term').val().trim();
->>>>>>> b726c4e97fd249e93c4d09b6825b0777ec9502cf
 
     $('#recipeListEl').empty();
     console.log(title);
@@ -158,17 +147,6 @@ function failedResponse() {
 
 
 
-<<<<<<< HEAD
-function renderElements() {
-    bookTitle.text(title);
-    autherNameEl.text(author);
-    bookDescriptionEl.text(description);
-    bookImg.attr('src', imgUrl);
-
-    console.log(drinkValue);
-}
-=======
->>>>>>> b726c4e97fd249e93c4d09b6825b0777ec9502cf
 
 
 
