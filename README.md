@@ -29,11 +29,16 @@ GitHub Repo: https://github.com/danielalexvega/Project1
 
 Deployed Site: https://danielalexvega.github.io/Project1/index.html
 
+The home page for our site: the user inputs a book title into the search bar, and the results are displayed. The user gets an image of the book, the title, author, and a short description as given from the Google Books API. If there is a New York Times book review, that will also be displayed. Then we take that data and make an API call to the CocktailsDB, and we display an image of the drink, the name, the recipe and instructions. 
+![](topShelf.JPG)
+
+Users can save drinks for reference later by hitting the save button, and their saved drinks are displayed on the Bar Cart. 
 ![](barCart.JPG)
 
+Users can also save books by hitting the save book button, and the results are stored on the Book Shelf. 
 ![](bookShelf.JPG)
 
-![](topShelf.JPG)
+
  
 
 
