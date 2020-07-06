@@ -32,7 +32,7 @@ loadDrinkStorage();
 function loadDrinkStorage(){
     savedDrinkArr = JSON.parse(localStorage.getItem('drinkArr'));
     if(savedDrinkArr === null) {
-        saveBookArr = [];
+        savedDrinkArr = [];
     }
     console.log(savedDrinkArr);
 }
