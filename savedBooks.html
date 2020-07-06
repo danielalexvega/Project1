@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Top Shelf</title>
+    <title>Top Shelf - Book Shelf</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./style2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=DM+Serif+Display&family=Francois+One&family=Montserrat+Subrayada:wght@700&family=Notable&family=Playfair+Display:wght@500;600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Crimson+Text&family=DM+Serif+Display&family=Francois+One&family=Montserrat+Subrayada:wght@700&family=Notable&family=Playfair+Display:wght@500;600&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
 </head>
 
 <body>
     <header>
         <div class="jumbotron jumbotron-fluid" id="banner">
-            <h4 id="bannerText">Book Shelf</h4>
+            <h1 id="bannerText">Book Shelf</h1>
             <h2 id="bookShelfTag">"Every man's memory is his private literature" - Aldous Huxley</h2>
         </div>
     </header>
@@ -29,15 +30,14 @@
         <button class="btn btn-dark m1-2 my-sm-0 buttonRow" id="barCart-btn" type="submit">Bar Cart</button>
     </nav>
 
-    <div class="container customContainer">
+    <div class="container customContainer" id="savedBookContainer">
 
 
     </div>
 
-    <footer id="sticky-footer" class="py-2 bg-dark text-white-50">
-        <div class="container text-center">
-            <small>Copyright &copy; Your Website</small>
-        </div>
+    <footer id="footer" class="py-2 fixed-bottom customFooter">
+        <p id="footertag">There is no friend as loyal as a book. - Ernest Hemingway</p>
+        <p id="credits">This site was made using the Google Books API, the New York Times Book Review API, and the CocktailDB API, by Corey Spratlan, Walter Wang, and Daniel Vega.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -55,6 +55,32 @@
     <script type="text/javascript" src="drink.js"></script>
     <script type="text/javascript" src="bookList.js"></script>
     <script type="text/javascript" src="drinkList.js"></script>
+
+    <script>
+        $(function () {
+            renderBookShelf();
+
+            var removeListener = $('.removeBook');
+            removeListener.click(function() {
+                console.log(bookArr);
+                let removeTitle = $(this).parent().parent().children()[1].id;
+             
+                let removeIndex = -1;
+                for(let i = 0; i < bookArr.length; i++) {
+                    if(bookArr[i].bkTitle === removeTitle) {
+                        removeIndex = i;
+                    }
+                }   
+                console.log(removeIndex);
+                bookArr.splice(removeIndex, 1);
+
+                console.log(bookArr);
+                $('#savedBookContainer').empty();
+                renderBookShelf();
+            }) 
+
+        });
+    </script>
 
 
 

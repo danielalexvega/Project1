@@ -1,6 +1,5 @@
 //deal with local storage, storing drinks, storing books, random books, 
 
-
 var drinkValue;
 var containsAlcohol = true;
 var title;
@@ -31,6 +30,8 @@ var topShelfBtn = $('#topShelf-btn');
 
 var litArray = ['Lord of the Flies', '1984', "The Handmaid's Tale", 'The Great Gatsby', 'Things Fall Apart', 'To Kill a Mockingbird', 'Farewell to Arms', 'Invisible Man', 'On the Road', "One Flew Over the Cuckoo's Nest", 'Catch-22', 'The Catcher in the Rye', 'Fahrenheit 451', 'East of Eden', 'Breakfast of Champions'];
 
+saveBookBtn.toggle();
+loadBookStorage();
 
 function loadBookStorage() {
     title = localStorage.getItem('title');
@@ -40,11 +41,10 @@ function loadBookStorage() {
         makeCalls(title);
     }
 
-    saveBookArr = JSON.parse(localStorage.getItem('bookArr'));
-    if(saveBookArr === null) {
-        saveBookArr = [];
+    savedBookArr = JSON.parse(localStorage.getItem('bookArr'));
+    if(savedBookArr === null) {
+        savedBookArr = [];
     }
-    console.log(saveBookArr);
 }
 
 searchBtn.on('click', function (event) {

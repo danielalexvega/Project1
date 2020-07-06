@@ -14,7 +14,8 @@ var drinkInstructions;
 var totalDrinkInfo;
 var drinkUrl;
 var drinkImg;
-var savedDrinkArr = [];
+var decider;
+var savedDrinkArr;
 
 var drinkTitle = $("#drinkTitleEl");
 var recipe = $("#recipeList");
@@ -26,8 +27,7 @@ var drinkCol = $('#drinkCol');
 var searchBtn = $('#search-btn');
 
 
-var decider;
-
+loadDrinkStorage();
 
 function loadDrinkStorage(){
     savedDrinkArr = JSON.parse(localStorage.getItem('drinkArr'));
@@ -88,7 +88,6 @@ function drinkCalls() {
            
         });
     });
-
 }
 
 
