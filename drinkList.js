@@ -9,7 +9,7 @@ barCartBtn.on('click', gotoBarcart);
 function createDrinkObject(event) {
     event.preventDefault();
 
-    if (savedDrinkArr !== undefined || savedDrinkArr === null || savedDrinkArr.length !== 0) {
+    if (savedDrinkArr !== undefined && savedDrinkArr === null && savedDrinkArr.length !== 0) {
         let containsDrink = false;
         savedDrinkArr.forEach(drink => {
             if (drink.drName === drinkName) {
