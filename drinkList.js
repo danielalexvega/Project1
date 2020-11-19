@@ -31,7 +31,7 @@ function createDrinkObject(event) {
             drName: drinkName,
             drInstructions: drinkInstructions,
             drIngredients: ingredients,
-            drMeasurements: measurements,   
+            drMeasurements: measurements,
             drImgURL: drinkUrl
         });
     }
@@ -40,17 +40,21 @@ function createDrinkObject(event) {
 
 }
 
-function gotoBarcart(event){
+function gotoBarcart(event) {
     event.preventDefault();
-    window.location.href = 'savedDrinks.html';   
+    window.location.href = 'savedDrinks.html';
+}
+
+function test() {
+    console.log('test');
 }
 
 function renderBarCart() {
-   // drinkArr = JSON.parse(localStorage.getItem('drinkArr'));
+    // drinkArr = JSON.parse(localStorage.getItem('drinkArr'));
 
     //picture     name     ingredients       instructions
     //I need to clear out the container
-    if(drinkArr === null || drinkArr.length === 0) {
+    if (drinkArr === null || drinkArr.length === 0) {
         //try a modal alerting that there's nothing on the barcart, go to the top shelf
         // console.log('test');
         // $('#myDrinkModal').modal('show');
@@ -100,6 +104,6 @@ function renderBarCart() {
             row.append(removeCol);
 
             $('#savedDrinkContainer').append(row);
-       });    
-   }       
+        });
+    }
 }
